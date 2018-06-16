@@ -1,4 +1,4 @@
-# 제일 간단한 Webpack4 - 설정 없이 사용하기
+# Learning Webpack4 - 설정 없이 사용하기
 
 mkdir \<dirname>
 
@@ -7,7 +7,6 @@ cd \<dirname>
 npm init # package.json 초기화
 
 npm i -D webpack webpack-cli # i는 install, -D는 --save-dev의 약자. webpack은 개발 중에만 필요하고 실제 배포 되었을 때 필요한 툴은 아니기떄문에 -D를 한다.
-
 
 다음, package.json 파일을 열고 scripts 태그 부분을 수정.
 ```
