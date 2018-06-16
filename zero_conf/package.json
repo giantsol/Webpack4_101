@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack ./mysrc/input.js --output ./dist/output.js"
   },
   "keywords": [],
   "author": "",

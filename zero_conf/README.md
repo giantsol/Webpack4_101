@@ -38,5 +38,15 @@ console.log('Dummy entry point!');
 webpack.config.js 파일을 따로 만들어서 설정해줘야 했지만, 편리하게도
 위와 같은 디폴트가 생겼다.
 
-설정 없이 사용하기를 마무리짓자면, Webpack4부터는 위의 디폴트 설정들이
-추가되었기 때문에, 테스트용으로 빌드해보는 작은 프로젝트들은 설정 파일이 아예 필요가 없다!
+그럼, 위 디폴트 경로들을 바꾸려면 config 파일을 만들어야 할까?
+이 또한 번거롭지 않게, package.json만 조금 바꿔주면 된다:
+```
+"scripts": {
+  "build": "webpack ./mysrc/input.js --output ./dist/output.js"
+}
+```
+그리고, ./mysrc/input.js 파일을 생성해준 후 다시 ```npm run build```
+를 실행하면, ./dist/output.js 파일이 생성되는 것을 확인할 수 있다.
+
+마무리짓자면, Webpack4부터는 위의 디폴트 설정들이 추가되었기 때문에,
+테스트용으로 빌드해보는 작은 프로젝트들은 설정 파일이 아예 필요가 없을 수도 있게 되었다.
