@@ -1,4 +1,5 @@
 # Learning Webpack 4
 
 Resources:
-https://www.valentinog.com/blog/webpack-tutorial/
+- https://www.valentinog.com/blog/webpack-tutorial/
+- https://medium.freecodecamp.org/part-1-react-app-from-scratch-using-webpack-4-562b1d231e75
