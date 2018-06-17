@@ -1,0 +1,22 @@
+{
+  "name": "4_using_html",
+  "version": "1.0.0",
+  "description": "여태까지 우리는 ./src/index.js라는 디폴트 entry point 파일만을 사용해왔다. 근데 웹페이지를 만들려면 html, css와 같은 파일들도 필요하다. 우선은 html파일을 사용하는 방법부터 보자.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8"
+  }
+}
