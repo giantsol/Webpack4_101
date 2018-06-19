@@ -86,3 +86,66 @@ document.getElementsByTagName('body')[0].style.backgroundColor = '#FF0000';
 따라서, ./dist/main.js를 자세히 보면 우리가 정의한 style이 적용되는 코드를 볼 수 있을 것이다.
 
 이로써, js, html, css를 모두 활용하여 빌드해보는 법을 배웠다!
+
+
+#### **추가
+위에서, 우리는 css-loader와 style-loader를 사용해서 css를 사용해 보았다:
+```
+npm i css-loader style-loader -D
+```
+
+이 프로젝트에 실제 적용해보진 않겠지만, 많이 사용하는 다른 방식은
+css-loader와 mini-css-extract-plugin이란걸 사용하는 방법이다:
+```
+npm i css-loader mini-css-extract-plugin -D
+```
+
+그리고 우리가 사용했던 방식과 유사하게 webpack.config.js를 변경해주는데, 방식은 당연히 다르다:
+```js
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader"
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
+  ]
+};
+```
+
+마지막으로, default entry module인 ./src/index.js에 ```import './main.css'```
+식으로 추가해주고, ```npm run dev```를 돌려보면 된다!
+
+우리가 사용했던 방식과는 다르게 ./dist/main.css 파일이 생성되었고,
+./dist/index.html을 보면 css 파일이 링크되어있는 것을 확인할 수 있을 것이다.
+
+어느 방식으로나 잘 작동한다!!
