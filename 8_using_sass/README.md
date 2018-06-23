@@ -17,7 +17,11 @@ npm i sass-loader node-sass -D
 // 물론, scss만 쓸 생각이면 지워도 무관하고!
 {
     test: /\.scss$/,
-    use: ['style-loader', 'css-loader', 'sass-loader']
+    use: [
+      argv.mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+      'css-loader',
+      'sass-loader'
+    ]
 }
 ```
 
