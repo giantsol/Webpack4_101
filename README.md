@@ -55,6 +55,11 @@ React 개발 환경을 세팅해본다.
 기본적인 웹개발 환경이다. 이 뒤에 나올 튜토리얼들의 대다수는 이 디렉토리를 copy해서
 쓰게 될 예정이다.
 
+### 8_using_sass
+
+CSS의 확장판이라고 할 수 있는 SASS를 어떻게 사용할 수 있는지 알아본다.
+
 ## Resources:
 - https://www.valentinog.com/blog/webpack-tutorial/
 - https://medium.freecodecamp.org/part-1-react-app-from-scratch-using-webpack-4-562b1d231e75
+- https://github.com/webpack-contrib/sass-loader
